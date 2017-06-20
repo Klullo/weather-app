@@ -1,0 +1,96 @@
+<!doctype html>
+
+<html lang="en" ng-app="app">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Weather App</title>
+    <meta name="description" content="Weather App">
+    <meta name="author" content="SitePoint">
+
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="styles.css" />
+
+
+</head>
+
+<body ng-controller="weatherController as weatherCtrl">
+
+    <div class="container">
+
+        <div class="jumbotron">
+            <h1 class="lead">Origin Weather Application</h1>
+            <p class="lead">Always know if you'll need an umbrella</p>
+        </div>
+
+
+        <div class="btn-group" role="group" aria-label="...">
+            <button type="button" class="btn btn-primary">San Diego</button>
+            <button type="button" class="btn btn-primary" ng-click="weatherCtrl.getWeather()">New York</button>
+            <button type="button" class="btn btn-primary">Washington D.C</button>
+            <button type="button" class="btn btn-primary">London</button>
+            <button type="button" class="btn btn-primary">Tokyo</button>
+        </div>
+        <div class="input-group">
+            <input ng-model="weatherCtrl.term" type="text" class="form-control" placeholder="Search for...">
+            <span class="input-group-btn">
+        <button class="btn btn-default" type="button" ng-click="weatherCtrl.getWeather()">Go!</button>
+      </span>
+        </div>
+        <!-- /input-group -->
+
+
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-info">
+                    <div class="panel-heading">City Information</div>
+                    <div class="panel-body text-center">
+                        <h2>{{weatherCtrl.weather.name}}</h2>
+                        <p> Lat/Lon: {{weatherCtrl.weather.coord.lat}}, {{weatherCtrl.weather.coord.lon}}
+                        </p>
+                        <hr></hr>
+                        <div class="row">
+                            <div class="col-md-4">Temperature(f)
+                                <p>{{weatherCtrl.weather.main.temp}}</p>
+                                </div>
+                            <div class="col-md-4">Pressure
+                                <p>{{weatherCtrl.weather.main.pressure}}</p>
+                            </div>
+                            <div class="col-md-4">Humidity
+                                <p>{{weatherCtrl.weather.main.humidity}}</p>
+                            </div>
+                            <div class="col-md-4">Lowest Temp(f)
+                                <p>{{weatherCtrl.weather.main.temp_min}}</p>
+                            </div>
+                            <div class="col-md-4">Highest Temp(f)
+                                <p>{{weatherCtrl.weather.main.temp_max}}</p>
+                            </div>
+                            <div class="col-md-4">Wind Speed
+                                <p>{{weatherCtrl.weather.wind.speed}}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-info">
+                    <div class="panel-heading">City Information</div>
+                    <div class="panel-body">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="app/app.module.js"></script>
+        <script src="app/weather-app/weather.controller.js"></script>
+</body>
+
+</html>
