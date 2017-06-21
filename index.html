@@ -22,7 +22,7 @@
 
         <div class="jumbotron">
             <h1 class="lead">Origin Weather Application</h1>
-            <p class="lead">Always know if you'll need an umbrella</p>
+            <p class="lead">Always know if you'll need an umbrella!</p>
         </div>
 
 
@@ -36,7 +36,7 @@
         <div class="input-group">
             <input ng-model="weatherCtrl.term" type="text" class="form-control" placeholder="Search for...">
             <span class="input-group-btn">
-        <button class="btn btn-default" type="button" ng-click="weatherCtrl.getWeather()">Go!</button>
+        <button class="btn btn-default" type="button" ng-click="weatherCtrl.getWeather(weatherCtrl.term)">Go!</button>
       </span>
         </div>
         <!-- /input-group -->
