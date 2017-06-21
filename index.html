@@ -27,11 +27,11 @@
 
 
         <div class="btn-group" role="group" aria-label="...">
-            <button type="button" class="btn btn-primary">San Diego</button>
-            <button type="button" class="btn btn-primary" ng-click="weatherCtrl.getWeather()">New York</button>
-            <button type="button" class="btn btn-primary">Washington D.C</button>
-            <button type="button" class="btn btn-primary">London</button>
-            <button type="button" class="btn btn-primary">Tokyo</button>
+            <button type="button" class="btn btn-primary" ng-click="weatherCtrl.getWeather('sandiego')">San Diego</button>
+            <button type="button" class="btn btn-primary" ng-click="weatherCtrl.getWeather('newyork')">New York</button>
+            <button type="button" class="btn btn-primary" ng-click="weatherCtrl.getWeather('washingtondc')">Washington D.C</button>
+            <button type="button" class="btn btn-primary" ng-click="weatherCtrl.getWeather('london')">London</button>
+            <button type="button" class="btn btn-primary" ng-click="weatherCtrl.getWeather('tokyo')">Tokyo</button>
         </div>
         <div class="input-group">
             <input ng-model="weatherCtrl.term" type="text" class="form-control" placeholder="Search for...">
